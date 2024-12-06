@@ -37,10 +37,9 @@ stages:
     environment: QA
     strategy:
      runOnce:
-       deploy:
-         steps:
-           - script: echo deploy to QA
-
+      deploy:
+        steps:
+        - script: echo deploy to QA
 
 # steps:
 # - script: echo Running on the $(operatingSystem)!
