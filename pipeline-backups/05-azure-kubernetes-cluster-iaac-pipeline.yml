@@ -18,19 +18,19 @@ steps:
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
     # commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
     backendType: 'azurerm'
-    backendServiceArm: 'azure-resource-manager-service-connection'
+    backendServiceArm: 'azure-rm-service-connection'
     ensureBackend: true
     backendAzureRmResourceGroupName: 'terraform-backend-rg'
-    backendAzureRmResourceGroupLocation: 'westeurope'
-    backendAzureRmStorageAccountName: 'storageacctrangaxyz'
-    backendAzureRmContainerName: 'storageacctrangacontainer'
+    backendAzureRmResourceGroupLocation: 'westus'
+    backendAzureRmStorageAccountName: 'storageacctemeka'
+    backendAzureRmContainerName: 'storageacctemekacontainer'
     backendAzureRmKey: 'kubernetes-dev.tfstate'
 
 - task: TerraformCLI@0
   inputs:
     command: 'apply'
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
-    environmentServiceName: 'azure-resource-manager-service-connection'
+    environmentServiceName: 'azure-rm-service-connection'
     commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
 
 # - task: TerraformCLI@0
